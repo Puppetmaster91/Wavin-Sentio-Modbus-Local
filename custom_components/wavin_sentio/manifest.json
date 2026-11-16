@@ -1,6 +1,9 @@
 {
   "domain": "wavin_sentio",
   "name": "Wavin Sentio",
+  "categories": [
+    "climate.thermostats_heating"
+  ],
   "codeowners": [
     "@puppetmaster91"
   ],

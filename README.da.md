@@ -106,7 +106,12 @@ Modbus er **slået fra som standard**. På Sentio-displayet:
 
 ### HACS (custom repository)
 
-1. Åbn **HACS** i Home Assistant, derefter menuen (⋮) → **Custom repositories**.
+> Nyere Home Assistant-versioner får HACS bygget ind i core som en **Marketplace** (omtalt som
+> målrettet 2026.11). Custom GitHub-repositories skulle fortsat kunne bruges, men menunavne og
+> trin kan afvige fra nedenstående. Se din versions dokumentation, hvis du ikke kan finde
+> *Custom repositories*.
+
+1. Åbn **HACS** (eller Marketplace) i Home Assistant, derefter menuen (⋮) → **Custom repositories**.
 2. Tilføj `https://github.com/puppetmaster91/Wavin-Sentio-Modbus-Local` med kategori **Integration**.
 3. Find **Wavin Sentio** i HACS, installér den, og **genstart Home Assistant**.
 
