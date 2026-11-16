@@ -1,4 +1,4 @@
-# Wavin Sentio (Local Modbus) for Home Assistant
+# Wavin Sentio Local for Home Assistant
 
 **English** · [Dansk](README.da.md)
 
@@ -114,7 +114,7 @@ Modbus is **off by default**. On the Sentio display:
 
 1. In Home Assistant open **HACS** (or the Marketplace), then the menu (⋮) → **Custom repositories**.
 2. Add `https://github.com/puppetmaster91/Wavin-Sentio-Modbus-Local` with category **Integration**.
-3. Find **Wavin Sentio** in HACS, install it, and **restart Home Assistant**.
+3. Find **Wavin Sentio Local** in HACS, install it, and **restart Home Assistant**.
 
 ### Manual
 
@@ -125,7 +125,7 @@ Modbus is **off by default**. On the Sentio display:
 
 ## Setup
 
-1. **Settings → Devices & services → Add integration**, search for **Wavin Sentio**.
+1. **Settings → Devices & services → Add integration**, search for **Wavin Sentio Local**.
 2. Enter:
    - **IP address** of the controller,
    - **Port**: `502`,
@@ -382,7 +382,7 @@ hardware, so reviews by humans who know the Sentio are valuable.
 - The register logic was tested against a simulated Sentio, including "busy" answers, missing
   registers, invalid values, writes and the author's real register values. The Home Assistant
   platform code (entities, config flow) was syntax-checked and then used on the author's real
-  installation, but has no automated test suite.
+  installation (setup, zones, circuits, ΔT and removing unused devices), but has no automated test suite.
 - Please treat the code as you would any unreviewed third-party code.
 
 ## License

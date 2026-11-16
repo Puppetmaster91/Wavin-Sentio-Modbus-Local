@@ -2,7 +2,7 @@
   "config": {
     "step": {
       "user": {
-        "title": "Wavin Sentio",
+        "title": "Wavin Sentio Local",
         "description": "Modbus TCP skal være sat til Read/write på controlleren (System > Installer settings > Modbus settings).",
         "data": {
           "host": "IP-adresse",
@@ -22,7 +22,7 @@
   "options": {
     "step": {
       "init": {
-        "title": "Wavin Sentio indstillinger",
+        "title": "Wavin Sentio Local indstillinger",
         "data": {
           "zones": "Zoner der oprettes",
           "scan_interval": "Opdateringsinterval (sekunder)",
