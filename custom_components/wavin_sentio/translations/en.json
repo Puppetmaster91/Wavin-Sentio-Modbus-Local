@@ -1,0 +1,190 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Wavin Sentio",
+        "description": "Modbus TCP must be set to Read/write on the controller (System > Installer settings > Modbus settings).",
+        "data": {
+          "host": "IP address",
+          "port": "Port",
+          "unit_id": "Modbus unit ID (try 255 if 1 does not answer)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect. Check the IP address and that Modbus TCP is enabled.",
+      "modbus_error": "The controller answered with a Modbus error. Try another unit ID."
+    },
+    "abort": {
+      "already_configured": "This controller is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Wavin Sentio options",
+        "data": {
+          "zones": "Zones to create",
+          "scan_interval": "Update interval (seconds)",
+          "hccs": "Heating circuits (HCC) to create",
+          "flow_sensor": "Flow thermistor for ΔT",
+          "return_sensor": "Return thermistor for ΔT"
+        }
+      }
+    },
+    "abort": {
+      "not_loaded": "The integration must be loaded to change options."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "air_temperature": {
+        "name": "Air temperature"
+      },
+      "humidity": {
+        "name": "Humidity"
+      },
+      "floor_temperature": {
+        "name": "Floor temperature"
+      },
+      "dew_point": {
+        "name": "Dew point"
+      },
+      "desired_temperature": {
+        "name": "Desired temperature"
+      },
+      "state": {
+        "name": "State",
+        "state": {
+          "idle": "Idle",
+          "heating": "Heating",
+          "cooling": "Cooling",
+          "blocked_heating": "Heating blocked",
+          "blocked_cooling": "Cooling blocked"
+        }
+      },
+      "blocking_source": {
+        "name": "Blocking source"
+      },
+      "outdoor_temperature": {
+        "name": "Outdoor temperature"
+      },
+      "hc_mode": {
+        "name": "Heating/cooling mode",
+        "state": {
+          "heating": "Heating",
+          "cooling": "Cooling"
+        }
+      },
+      "thermistor": {
+        "name": "Thermistor input T{n}"
+      },
+      "inlet_temperature": {
+        "name": "Flow temperature"
+      },
+      "desired_inlet_temperature": {
+        "name": "Desired flow temperature"
+      },
+      "desired_room_temperature": {
+        "name": "Highest desired room temperature"
+      },
+      "boiler_state": {
+        "name": "Boiler state",
+        "state": {
+          "idle": "Idle",
+          "heating_prepare": "Preparing heating",
+          "heating_active": "Heating",
+          "heating_terminate": "Ending heating",
+          "cooling_prepare": "Preparing cooling",
+          "cooling_active": "Cooling",
+          "cooling_terminate": "Ending cooling",
+          "blocked_heating": "Heating blocked",
+          "blocked_cooling": "Cooling blocked",
+          "failure": "Failure"
+        }
+      },
+      "boiler_requested_temperature": {
+        "name": "Requested boiler temperature"
+      },
+      "boiler_inlet_temperature": {
+        "name": "Boiler inlet temperature"
+      },
+      "delta_t": {
+        "name": "Flow/return difference"
+      }
+    },
+    "binary_sensor": {
+      "warning": {
+        "name": "Warning"
+      },
+      "error": {
+        "name": "Error"
+      },
+      "low_battery": {
+        "name": "Low battery"
+      },
+      "peripheral_lost": {
+        "name": "Peripheral lost"
+      },
+      "pump": {
+        "name": "Pump"
+      },
+      "pump_demand": {
+        "name": "Pump demand"
+      },
+      "inlet_sensor_failure": {
+        "name": "Flow sensor failure"
+      },
+      "high_temp_cutoff": {
+        "name": "High temperature cut-off"
+      },
+      "general_failure": {
+        "name": "General failure"
+      },
+      "boiler_warning": {
+        "name": "Boiler warning"
+      },
+      "boiler_error": {
+        "name": "Boiler error"
+      },
+      "boiler_inlet_sensor_failure": {
+        "name": "Boiler inlet sensor failure"
+      },
+      "boiler_failure": {
+        "name": "Boiler failure"
+      }
+    },
+    "switch": {
+      "standby": {
+        "name": "Standby"
+      },
+      "vacation": {
+        "name": "Vacation"
+      }
+    }
+  },
+  "services": {
+    "read_registers": {
+      "name": "Read registers",
+      "description": "Read raw Modbus registers from the Sentio (for probing/debugging).",
+      "fields": {
+        "type": {
+          "name": "Register type",
+          "description": "input, holding or discrete"
+        },
+        "address": {
+          "name": "Address",
+          "description": "Register number as printed in the Wavin manual"
+        },
+        "count": {
+          "name": "Count",
+          "description": "Number of registers to read"
+        },
+        "individually": {
+          "name": "One at a time",
+          "description": "Read each register separately so missing ones do not fail the whole read"
+        }
+      }
+    }
+  }
+}

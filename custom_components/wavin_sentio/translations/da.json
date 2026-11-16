@@ -1,0 +1,190 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Wavin Sentio",
+        "description": "Modbus TCP skal være sat til Read/write på controlleren (System > Installer settings > Modbus settings).",
+        "data": {
+          "host": "IP-adresse",
+          "port": "Port",
+          "unit_id": "Modbus unit ID (prøv 255, hvis 1 ikke svarer)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan ikke forbinde. Tjek IP-adressen, og at Modbus TCP er aktiveret.",
+      "modbus_error": "Controlleren svarede med en Modbus-fejl. Prøv et andet unit ID."
+    },
+    "abort": {
+      "already_configured": "Denne controller er allerede sat op."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Wavin Sentio indstillinger",
+        "data": {
+          "zones": "Zoner der oprettes",
+          "scan_interval": "Opdateringsinterval (sekunder)",
+          "hccs": "Varmekredse (HCC) der oprettes",
+          "flow_sensor": "Fremløbstermistor til ΔT",
+          "return_sensor": "Returtermistor til ΔT"
+        }
+      }
+    },
+    "abort": {
+      "not_loaded": "Integrationen skal være indlæst for at ændre indstillinger."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "air_temperature": {
+        "name": "Lufttemperatur"
+      },
+      "humidity": {
+        "name": "Luftfugtighed"
+      },
+      "floor_temperature": {
+        "name": "Gulvtemperatur"
+      },
+      "dew_point": {
+        "name": "Dugpunkt"
+      },
+      "desired_temperature": {
+        "name": "Ønsket temperatur"
+      },
+      "state": {
+        "name": "Tilstand",
+        "state": {
+          "idle": "Hviler",
+          "heating": "Varmer",
+          "cooling": "Køler",
+          "blocked_heating": "Varme blokeret",
+          "blocked_cooling": "Køling blokeret"
+        }
+      },
+      "blocking_source": {
+        "name": "Blokeringsårsag"
+      },
+      "outdoor_temperature": {
+        "name": "Udetemperatur"
+      },
+      "hc_mode": {
+        "name": "Varme/køl-mode",
+        "state": {
+          "heating": "Varme",
+          "cooling": "Køling"
+        }
+      },
+      "thermistor": {
+        "name": "Termistorindgang T{n}"
+      },
+      "inlet_temperature": {
+        "name": "Fremløbstemperatur"
+      },
+      "desired_inlet_temperature": {
+        "name": "Ønsket fremløbstemperatur"
+      },
+      "desired_room_temperature": {
+        "name": "Højeste ønskede rumtemperatur"
+      },
+      "boiler_state": {
+        "name": "Fyr tilstand",
+        "state": {
+          "idle": "Hviler",
+          "heating_prepare": "Forbereder varme",
+          "heating_active": "Varmer",
+          "heating_terminate": "Afslutter varme",
+          "cooling_prepare": "Forbereder køling",
+          "cooling_active": "Køler",
+          "cooling_terminate": "Afslutter køling",
+          "blocked_heating": "Varme blokeret",
+          "blocked_cooling": "Køling blokeret",
+          "failure": "Fejl"
+        }
+      },
+      "boiler_requested_temperature": {
+        "name": "Ønsket fyrtemperatur"
+      },
+      "boiler_inlet_temperature": {
+        "name": "Fyr indløbstemperatur"
+      },
+      "delta_t": {
+        "name": "Forskel fremløb/retur"
+      }
+    },
+    "binary_sensor": {
+      "warning": {
+        "name": "Advarsel"
+      },
+      "error": {
+        "name": "Fejl"
+      },
+      "low_battery": {
+        "name": "Lavt batteri"
+      },
+      "peripheral_lost": {
+        "name": "Føler mistet"
+      },
+      "pump": {
+        "name": "Pumpe"
+      },
+      "pump_demand": {
+        "name": "Pumpe efterspurgt"
+      },
+      "inlet_sensor_failure": {
+        "name": "Fremløbsføler fejl"
+      },
+      "high_temp_cutoff": {
+        "name": "Høj temperatur afbrydelse"
+      },
+      "general_failure": {
+        "name": "Generel fejl"
+      },
+      "boiler_warning": {
+        "name": "Fyr advarsel"
+      },
+      "boiler_error": {
+        "name": "Fyr fejl"
+      },
+      "boiler_inlet_sensor_failure": {
+        "name": "Fyr indløbsføler fejl"
+      },
+      "boiler_failure": {
+        "name": "Fyr generel fejl"
+      }
+    },
+    "switch": {
+      "standby": {
+        "name": "Standby"
+      },
+      "vacation": {
+        "name": "Ferie"
+      }
+    }
+  },
+  "services": {
+    "read_registers": {
+      "name": "Læs registre",
+      "description": "Læs rå Modbus-registre fra Sentio (til test og fejlfinding).",
+      "fields": {
+        "type": {
+          "name": "Registertype",
+          "description": "input, holding eller discrete"
+        },
+        "address": {
+          "name": "Adresse",
+          "description": "Registernummer som i Wavins manual"
+        },
+        "count": {
+          "name": "Antal",
+          "description": "Antal registre der læses"
+        },
+        "individually": {
+          "name": "Ét ad gangen",
+          "description": "Læs hvert register for sig, så manglende registre ikke afbryder hele læsningen"
+        }
+      }
+    }
+  }
+}

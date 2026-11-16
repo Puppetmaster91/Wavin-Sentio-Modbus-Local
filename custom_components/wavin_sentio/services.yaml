@@ -1,0 +1,30 @@
+read_registers:
+  fields:
+    type:
+      required: true
+      default: input
+      selector:
+        select:
+          options:
+            - input
+            - holding
+            - discrete
+    address:
+      required: true
+      example: 7301
+      selector:
+        number:
+          min: 0
+          max: 65535
+          mode: box
+    count:
+      default: 10
+      selector:
+        number:
+          min: 1
+          max: 64
+          mode: box
+    individually:
+      default: true
+      selector:
+        boolean:
